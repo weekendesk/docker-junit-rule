@@ -2,4 +2,4 @@ type: java
 image: maven:3.8-jdk-8-slim
 steps:
   - ./gradlew build -x test --console=plain
-  - mvn -B -U deploy:deploy-file -DgroupId=com.github.geowarin -DartifactId=docker-junit-rule -Dversion=1.2.0 -Dpackaging=jar -Dfile=../build/libs/docker-junit-rule-1.2.0.jar -DrepositoryId=${MVN_SERVER_ID} -Durl=${MVN_SERVER_ID}::default::${CODEARTIFACT_ENDPOINT}
+  - mvn -B -U deploy:deploy-file -DgroupId=com.github.geowarin -DartifactId=docker-junit-rule -Dversion=1.2.0 -Dpackaging=jar -Dfile=./build/libs/app-1.2.0.jar -DrepositoryId=${MVN_SERVER_ID} -Durl=${MVN_SERVER_ID}::default::${CODEARTIFACT_ENDPOINT}
